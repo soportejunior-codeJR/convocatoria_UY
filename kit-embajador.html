@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit del embajador JC</title>
+<style>
+:root{--naranja:#F7972B;--marino:#0C175D;--azul:#406C9E;--celeste:#83B6DD;--verde:#6EA050;--rojo:#C12D4C;
+--fondo:#F5F7FB;--texto:#1B1F3B;--suave:#5B6180;--linea:#E1E6EF;--font:Gilroy,'Century Gothic',CenturyGothic,'Segoe UI',Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--font);line-height:1.6}
+.franja{display:flex;height:6px}.franja span{flex:1}
+header{background:var(--marino);color:#fff;padding:40px 16px 32px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+.ti{color:var(--naranja)}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.15;margin:6px 0 10px}
+header p{color:#D6DCF0;margin:0}
+.eyebrow{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--celeste);font-weight:700}
+section{padding:32px 0 0}
+h2{color:var(--marino);font-size:clamp(20px,3.2vw,26px);margin:0 0 10px}
+.card{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:18px;margin-bottom:12px}
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.dato{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:12px 14px}
+.dato b{display:block;color:var(--naranja);font-size:20px}
+.dato span{font-size:14px;color:var(--suave)}
+label{font-weight:700;color:var(--marino)}
+input[type=text]{width:100%;font:inherit;font-size:18px;padding:12px 14px;border:2px solid var(--linea);border-radius:10px;margin:6px 0 12px;text-transform:uppercase}
+input[type=text]:focus{outline:none;border-color:var(--naranja)}
+.enlace{background:#F2F6FB;border-radius:10px;padding:12px;font-size:13px;word-break:break-all;font-family:Consolas,monospace}
+.btn{display:inline-block;border:0;background:var(--naranja);color:#fff;font:inherit;font-weight:700;padding:10px 18px;border-radius:8px;cursor:pointer;margin:8px 8px 0 0}
+.btn.sec{background:#fff;color:var(--marino);border:2px solid var(--marino)}
+.qr-caja{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:14px}
+#qr{background:#fff;padding:10px;border:1px solid var(--linea);border-radius:10px;min-width:180px;min-height:180px;display:grid;place-items:center;color:var(--suave);font-size:13px}
+.msg{white-space:pre-wrap;background:#F2F6FB;border-left:4px solid var(--celeste);border-radius:8px;padding:12px 14px;margin:8px 0 0;font-size:15px}
+.msg-tit{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.msg-tit h3{margin:0;color:var(--marino);font-size:17px}
+.si,.no{border-radius:12px;padding:14px 18px}
+.si{background:#EEF6EA;border-left:5px solid var(--verde)}
+.no{background:#FCEEF1;border-left:5px solid var(--rojo)}
+.si h3,.no h3{margin:0 0 6px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+ul{margin:6px 0 0;padding-left:20px}li{margin:4px 0}
+details{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:12px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700;color:var(--marino)}
+.aviso{background:#FFF8EC;border-left:4px solid var(--naranja);border-radius:8px;padding:12px 16px;color:#5A3A0A;font-size:14px}
+footer{background:var(--marino);color:#C9D1EA;padding:24px 16px;margin-top:40px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="franja"><span style="background:#EEC935"></span><span style="background:#D1793F"></span><span style="background:#C12D4C"></span><span style="background:#406C9E"></span><span style="background:#6EA050"></span><span style="background:#6FA0BC"></span><span style="background:#83B6DD"></span></div>
+<header><div class="wrap">
+  <div class="eyebrow">Fundación ROFÉ · Convocatoria Uruguay 2027</div>
+  <h1>Kit del embajador de Jóvenes crea<span class="ti">TI</span>vos</h1>
+  <p>Todo lo que necesitás para invitar a tus amigos, a tu liceo y a tu barrio: tu enlace con tu código, tu QR y mensajes listos para copiar.</p>
+</div></header>
+
+<main class="wrap">
+
+<section>
+  <h2>Lo que tenés que saber</h2>
+  <div class="datos">
+    <div class="dato"><b>Gratis</b><span>formación en tecnología y habilidades digitales</span></div>
+    <div class="dato"><b>5.º y 6.º</b><span>de liceo, o egresados hace 3 años o menos</span></div>
+    <div class="dato"><b>Colonia y Paysandú</b><span>sedes de Uruguay (también Colón y Concepción del Uruguay)</span></div>
+    <div class="dato"><b>Mar – nov 2027</b><span>cohorte 2027, 80% virtual y 20% presencial</span></div>
+    <div class="dato"><b>18 de diciembre</b><span>cierra la 1.ª etapa de inscripciones</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>1. Tu enlace y tu QR</h2>
+  <div class="card">
+    <label for="codigo">Escribí tu código de embajador</label>
+    <input type="text" id="codigo" placeholder="Ej.: UY-EMB-01" autocomplete="off" maxlength="40">
+    <div class="enlace" id="enlace">Escribí tu código para ver tu enlace.</div>
+    <button class="btn" id="copiarEnlace" type="button">Copiar mi enlace</button>
+    <div class="qr-caja">
+      <div id="qr">Tu QR aparece acá</div>
+      <div style="max-width:380px;font-size:14px;color:var(--suave)">Usá el QR en charlas, carteleras o historias. Quien se inscribe con tu enlace queda contado para vos. Igual pediles que escriban tu código en el campo «código de embajador» del formulario.<br><button class="btn sec" id="bajarQR" type="button">Descargar QR</button></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2. Mensajes listos para copiar</h2>
+  <p style="margin:0 0 10px;color:var(--suave)">Ya traen tu enlace adentro. Cambiá lo que quieras para que suene a vos: lo que mejor funciona es contar tu experiencia con tus palabras.</p>
+  <div id="mensajes"></div>
+</section>
+
+<section>
+  <h2>3. Tu meta: 20 personas</h2>
+  <div class="card">
+    <ul>
+      <li><b>Pensá en 20 personas</b> de 5.º, 6.º o egresadas hace poco: amigos, compañeros, primos, vecinos, gente de tu club o tu iglesia.</li>
+      <li><b>Escribiles una por una</b>, no en un mensaje masivo. Un mensaje personal se responde mucho más.</li>
+      <li><b>Si alguien te dice «me interesa»</b>, mandale tu enlace y ofrecele contarle cómo fue para vos. Si quiere que el equipo lo llame, pedile permiso antes de pasarle su número a Alfonzina.</li>
+      <li><b>Cada lunes</b> el equipo mira cuántas inscripciones llegaron con tu código y te cuenta cómo vas.</li>
+      <li><b>¿Tu liceo?</b> Contanos quién es el adscripto o el profe que nos podría abrir la puerta para dar una charla de 10 minutos. Si querés, la das con nosotros.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>4. Para responder dudas</h2>
+  <details><summary>¿Cuánto cuesta?</summary><p>Nada. Es un programa gratuito de Fundación ROFÉ.</p></details>
+  <details><summary>¿Quién se puede inscribir?</summary><p>Estudiantes de 5.º o 6.º de liceo, o quienes terminaron hace 3 años o menos, con al menos 14 años, que vivan cerca de las sedes de Colonia o Paysandú (también Colón y Concepción del Uruguay, en Argentina).</p></details>
+  <details><summary>¿Es presencial o virtual?</summary><p>Mayormente virtual (cerca del 80%), con encuentros presenciales en la sede (cerca del 20%). Va de marzo a noviembre de 2027.</p></details>
+  <details><summary>¿Hasta cuándo me puedo inscribir?</summary><p>La 1.ª etapa cierra el 18 de diciembre de 2026. Mejor no dejarlo para el final.</p></details>
+  <details><summary>Me preguntaron algo que no sé</summary><p>No inventes la respuesta. Decí «te averiguo» y escribile a Alfonzina o al equipo. Mejor una respuesta tarde que una equivocada.</p></details>
+</section>
+
+<section>
+  <h2>5. Sí y no</h2>
+  <div class="grid2">
+    <div class="si"><h3>✅ Sí</h3><ul><li>Contar tu experiencia real en JC</li><li>Escribir uno por uno, a tu gente</li><li>Usar siempre tu enlace o tu QR</li><li>Pedir permiso antes de pasar datos de alguien</li></ul></div>
+    <div class="no"><h3>⛔ No</h3><ul><li>Mandar mensajes masivos o con programas automáticos: bloquean el número</li><li>Prometer becas, trabajo o cupos seguros</li><li>Agregar gente a grupos sin preguntarle</li><li>Compartir datos de otros sin su permiso</li></ul></div>
+  </div>
+</section>
+
+<div class="aviso" style="margin-top:24px"><b>Pendiente del equipo:</b> el enlace al video de la convocatoria y la imagen para historias. Cuando estén, se agregan acá.</div>
+
+</main>
+<footer><div class="wrap"><b style="color:#fff">Fundación ROFÉ · Jóvenes crea<span class="ti">TI</span>vos</b> — «Si quieres cambiar el mundo, toca una vida» · <a href="https://tocaunavida.org" style="color:#83B6DD">tocaunavida.org</a></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+  var BASE='https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=embajador&utm_source=embajador&utm_medium=referido&utm_campaign=jc_uy_2027';
+  var inp=document.getElementById('codigo'), out=document.getElementById('enlace'), qrBox=document.getElementById('qr');
+  var MSG=[
+    ['WhatsApp corto (a un amigo)','¡Hola! Abrió la convocatoria de Jóvenes creaTIvos en Uruguay: es gratis, de tecnología y habilidades digitales, para 5.º, 6.º y egresados hace poco. Yo estuve y me sirvió mucho. Te inscribís acá: {E}\nSi lo hacés, poné mi código {C}. ¡Cierra el 18 de diciembre!'],
+    ['WhatsApp largo (contando tu experiencia)','¡Hola! Te quería contar de Jóvenes creaTIvos, el programa de Fundación ROFÉ en el que estuve. [Contá en una o dos frases qué aprendiste o qué te cambió.]\nEs gratis, va de marzo a noviembre de 2027, casi todo virtual con algunos encuentros en la sede de Colonia o Paysandú. Es para 5.º, 6.º o si terminaste el liceo hace 3 años o menos.\nTe inscribís acá: {E}\nPoné mi código {C}. La primera etapa cierra el 18 de diciembre. Si tenés dudas, preguntame.'],
+    ['Historia de Instagram','🚀 Abrió Jóvenes creaTIvos Uruguay 2027\nGratis · tecnología y habilidades digitales\nPara 5.º, 6.º y egresados recientes\nSedes Colonia y Paysandú\n👉 Link en mi historia · código {C}\nCierra el 18/12'],
+    ['Mensaje al adscripto o profe de tu liceo','Hola, profe. Soy {N} y participé en Jóvenes creaTIvos, un programa gratuito de Fundación ROFÉ de tecnología y habilidades digitales para estudiantes de 5.º y 6.º. Abrió la convocatoria 2027 y me gustaría que llegue a los grupos del liceo. ¿Podríamos dar una charla corta de 10 minutos, o compartir el enlace con los estudiantes? Este es el enlace: {E}\nEl equipo de la Fundación les puede escribir para coordinar. ¡Gracias!']
+  ];
+  function codigo(){return inp.value.trim().toUpperCase().replace(/[^A-Z0-9_-]/g,'');}
+  function enlace(){var c=codigo();return c?BASE+'&utm_content='+encodeURIComponent(c):'';}
+  function esc(t){return t.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function texto(t){var e=enlace()||'[tu enlace]', c=codigo()||'[tu código]';return t.split('{E}').join(e).split('{C}').join(c).split('{N}').join('[tu nombre]');}
+  function pintar(){
+    var e=enlace();
+    out.textContent=e||'Escribí tu código para ver tu enlace.';
+    qrBox.innerHTML='';
+    if(e && window.QRCode){new QRCode(qrBox,{text:e,width:180,height:180,colorDark:'#0C175D',colorLight:'#FFFFFF'});}
+    else qrBox.textContent=e?'No se pudo cargar el QR':'Tu QR aparece acá';
+    document.getElementById('mensajes').innerHTML=MSG.map(function(m,i){
+      return '<div class="card"><div class="msg-tit"><h3>'+m[0]+'</h3><button class="btn" type="button" data-m="'+i+'" style="margin:0">Copiar</button></div><div class="msg">'+esc(texto(m[1]))+'</div></div>';
+    }).join('');
+    try{localStorage.setItem('jc-uy-codigo',inp.value);}catch(err){}
+  }
+  function copiar(t,b){
+    var ok=function(){var v=b.textContent;b.textContent='¡Copiado!';setTimeout(function(){b.textContent=v;},1500);};
+    try{navigator.clipboard.writeText(t).then(ok,function(){});}catch(err){}
+  }
+  try{inp.value=localStorage.getItem('jc-uy-codigo')||'';}catch(err){}
+  var p=new URLSearchParams(location.search).get('codigo'); if(p) inp.value=p;
+  inp.addEventListener('input',pintar);
+  document.getElementById('copiarEnlace').addEventListener('click',function(){if(enlace())copiar(enlace(),this);});
+  document.getElementById('mensajes').addEventListener('click',function(e){var i=e.target.getAttribute('data-m');if(i!==null)copiar(texto(MSG[i][1]),e.target);});
+  document.getElementById('bajarQR').addEventListener('click',function(){
+    var img=qrBox.querySelector('img')||qrBox.querySelector('canvas'); if(!img)return;
+    var a=document.createElement('a');a.href=img.src||img.toDataURL('image/png');a.download='qr-'+(codigo()||'embajador')+'.png';a.click();
+  });
+  pintar();
+})();
+</script>
+</body>
+</html>

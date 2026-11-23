@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan de acción convocatoria UY</title>
+<style>
+:root{
+  --naranja:#F7972B; --marino:#0C175D; --azul:#406C9E; --celeste:#83B6DD; --cielo:#6FA0BC;
+  --verde:#6EA050; --amarillo:#EEC935; --cobre:#D1793F; --rojo:#C12D4C;
+  --fondo:#F5F7FB; --tarjeta:#FFFFFF; --texto:#1B1F3B; --suave:#5B6180; --linea:#E1E6EF;
+  --font:Gilroy,'Century Gothic',CenturyGothic,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--font);line-height:1.6;font-size:16px}
+a{color:var(--azul)}
+.franja{display:flex;height:6px}.franja span{flex:1}
+header.hero{background:var(--marino);color:#fff;padding:48px 16px 40px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.eyebrow{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--celeste);font-weight:700}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:8px 0 12px}
+.ti{color:var(--naranja)}
+.hero p{max-width:720px;color:#D6DCF0;margin:0 0 20px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:24px}
+.kpi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:28px;color:var(--naranja);line-height:1.1}
+.kpi span{font-size:13px;color:#C9D1EA}
+nav.menu{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--linea)}
+nav.menu .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}
+nav.menu a{white-space:nowrap;text-decoration:none;color:var(--marino);font-weight:700;font-size:14px;padding:8px 12px;border-radius:8px}
+nav.menu a:hover{background:#FFF1E0}
+section{padding:44px 0 8px}
+h2{font-size:clamp(22px,3.4vw,30px);color:var(--marino);margin:0 0 6px}
+h2 small{display:block;font-size:14px;color:var(--suave);font-weight:400;margin-top:4px}
+h3{color:var(--marino);margin:0 0 8px;font-size:18px}
+.lead{color:var(--suave);max-width:780px;margin:0 0 20px}
+.card{background:var(--tarjeta);border:1px solid var(--linea);border-radius:14px;padding:20px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#EEF2F7;color:var(--marino);margin:0 6px 6px 0}
+.tag.n{background:#FFF1E0;color:#9A5300}.tag.v{background:#E8F2E2;color:#3E6B2A}.tag.r{background:#FBE6EA;color:#9B1C38}.tag.a{background:#E6EEF7;color:#2B4F78}
+.nota{background:#FFF8EC;border-left:4px solid var(--naranja);border-radius:8px;padding:14px 18px;margin:16px 0;color:#5A3A0A}
+.nota.azul{background:#EEF4FA;border-color:var(--azul);color:#1F3B5C}
+.nota.roja{background:#FCEEF1;border-color:var(--rojo);color:#6E1428}
+
+/* termómetro de calidez */
+.calidez{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--linea)}
+.calidez div{padding:16px;color:#fff}
+.calidez b{display:block;font-size:15px}.calidez span{font-size:13px;opacity:.92}
+@media (max-width:700px){.calidez{grid-template-columns:1fr 1fr}}
+
+/* olas */
+.olas{display:flex;flex-direction:column;gap:12px}
+.ola{background:#fff;border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+.ola>button{all:unset;cursor:pointer;display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;width:100%;padding:16px 18px;box-sizing:border-box}
+.ola>button:focus-visible{outline:3px solid var(--naranja);outline-offset:-3px}
+.num{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:20px;color:#fff}
+.ola .tit{font-weight:800;color:var(--marino);font-size:17px}
+.ola .sub{font-size:13px;color:var(--suave)}
+.ola .flecha{transition:transform .2s;color:var(--suave);font-size:20px}
+.ola.abierta .flecha{transform:rotate(90deg)}
+.ola .cuerpo{display:none;padding:0 18px 18px 88px}
+.ola.abierta .cuerpo{display:block}
+@media (max-width:640px){.ola .cuerpo{padding:0 16px 16px}.ola>button{grid-template-columns:48px 1fr auto}}
+.tabla{width:100%;border-collapse:collapse;font-size:14px}
+.tabla th{text-align:left;background:#F2F5FA;color:var(--marino);padding:10px;border-bottom:2px solid var(--linea)}
+.tabla td{padding:10px;border-bottom:1px solid var(--linea);vertical-align:top}
+.scroll{overflow-x:auto}
+ul.limpia{margin:6px 0 0;padding-left:20px}ul.limpia li{margin:4px 0}
+
+/* escalera */
+.escalera{display:flex;flex-direction:column;gap:8px}
+.escalon{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:12px 14px}
+.escalon .p{width:32px;height:32px;border-radius:50%;background:var(--marino);color:#fff;display:grid;place-items:center;font-weight:800}
+.escalon small{color:var(--suave)}
+
+/* recursos */
+.recurso{border-top:5px solid var(--naranja)}
+.recurso h3{display:flex;align-items:center;gap:8px}
+.recurso dl{margin:8px 0 0;font-size:14px}
+.recurso dt{font-weight:700;color:var(--marino);margin-top:8px}
+.recurso dd{margin:2px 0 0;color:var(--texto)}
+
+/* calculadora */
+.calc{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+.ctrl{margin-bottom:14px}
+.ctrl label{display:flex;justify-content:space-between;font-size:14px;font-weight:700;color:var(--marino)}
+.ctrl label output{color:var(--naranja)}
+.ctrl input[type=range]{width:100%;accent-color:var(--naranja)}
+.ctrl small{color:var(--suave);font-size:12px}
+.barras{display:flex;flex-direction:column;gap:10px}
+.barra .et{display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px}
+.barra .pista{height:14px;background:#EEF2F7;border-radius:999px;overflow:hidden}
+.barra .lleno{height:100%;border-radius:999px;transition:width .3s}
+.total{font-size:44px;font-weight:800;line-height:1}
+.meta-pista{height:20px;background:#EEF2F7;border-radius:999px;overflow:hidden;margin:10px 0 6px;position:relative}
+.meta-lleno{height:100%;background:var(--naranja);transition:width .3s,background .3s}
+.meta-marca{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--marino)}
+
+/* calendario */
+.semanas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.semana{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:14px}
+.semana .f{font-size:12px;font-weight:700;color:var(--naranja);text-transform:uppercase;letter-spacing:1px}
+.semana h4{margin:4px 0 6px;color:var(--marino);font-size:16px}
+.semana ul{margin:0;padding-left:18px;font-size:14px}
+
+/* checklist */
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-bottom:1px solid var(--linea)}
+.check input{margin-top:5px;width:18px;height:18px;accent-color:var(--verde)}
+.check.hecho span{text-decoration:line-through;color:var(--suave)}
+.check small{display:block;color:var(--suave)}
+.progreso{height:10px;background:#EEF2F7;border-radius:999px;overflow:hidden;margin:6px 0 14px}
+.progreso div{height:100%;background:var(--verde);transition:width .3s}
+
+/* ideas */
+.idea{border-left:5px solid var(--amarillo)}
+.idea .q{font-size:13px;color:var(--suave);margin-top:8px;border-top:1px dashed var(--linea);padding-top:8px}
+.pregunta{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.pregunta b.i{width:26px;height:26px;border-radius:50%;background:var(--naranja);color:#fff;display:grid;place-items:center;font-size:13px}
+footer{background:var(--marino);color:#C9D1EA;padding:28px 16px;margin-top:48px;font-size:14px}
+@media print{nav.menu{display:none}.ola .cuerpo{display:block!important}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="franja"><span style="background:#EEC935"></span><span style="background:#D1793F"></span><span style="background:#C12D4C"></span><span style="background:#406C9E"></span><span style="background:#6EA050"></span><span style="background:#6FA0BC"></span><span style="background:#83B6DD"></span></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Fundación ROFÉ · Convocatoria Uruguay 2027 · Plan de acción</div>
+    <h1>Cómo llegamos a 1.000 jóvenes potenciales para Jóvenes crea<span class="ti">TI</span>vos Uruguay</h1>
+    <p>Contactar empresas y liceos en frío es lento y muchas veces no responden. Por eso el plan arranca con quienes ya nos conocen y deja para después a quienes no. Cada recurso tiene una tarea, un responsable y un número esperado.</p>
+    <div class="kpis">
+      <div class="kpi"><b>1.000</b><span>jóvenes potenciales en la base (meta)</span></div>
+      <div class="kpi"><b>347</b><span>postulantes 2025-2026 que ya tenemos, el 35% de la meta</span></div>
+      <div class="kpi"><b>124</b><span>liceos y UTU a 1h30 de cada sede</span></div>
+      <div class="kpi"><b>44</b><span>organizaciones aliadas posibles</span></div>
+      <div class="kpi"><b>US$100</b><span>pauta en Meta</span></div>
+      <div class="kpi"><b>18 dic</b><span>cierre de la 1.ª etapa de inscripciones</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="menu" aria-label="Secciones">
+  <div class="wrap">
+    <a href="#novedades">Novedades</a><a href="#agenda">Agenda</a><a href="#semana1">Avance</a><a href="#idea">La idea</a><a href="#olas">Orden de contacto</a><a href="#enlaces">Enlaces por canal</a><a href="#legal">Ley 18.331</a><a href="#dificiles">Contactos difíciles</a>
+    <a href="#recursos">Recursos</a><a href="#numeros">Números</a><a href="#calendario">Calendario</a>
+    <a href="#ideas">Ideas</a><a href="#preguntas">Por definir</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- NOVEDADES -->
+<section id="novedades">
+  <h2>Novedades<small>Última actualización: lunes 23 de noviembre de 2026</small></h2>
+  <div class="grid2">
+    <div class="card" style="border-top:5px solid var(--verde)">
+      <span class="tag v">Hecho</span><h3>Ley 18.331 en el formulario de liceos</h3>
+      <p style="margin:0">La autorización del formulario ahora cita la <b>Ley 18.331 de Protección de Datos Personales de Uruguay</b> y explica los derechos de acceso, rectificación, actualización y supresión. El cambio va en el archivo <code>.gs</code> con la función «Actualizar autorización». Esa función corrige el formulario que ya existe, sin crear otro y sin tocar las respuestas.</p>
+    </div>
+    <div class="card" style="border-top:5px solid var(--amarillo)">
+      <span class="tag n">En curso</span><h3>Ley 18.331 en la página de inscripción</h3>
+      <p style="margin:0">La página de Uruguay todavía cita la Ley 1581 de Colombia y a la SIC. La administra el equipo de la landing, que tiene que cargar el texto nuevo, ya redactado más abajo (<a href="#legal">ver propuesta</a>).</p>
+    </div>
+    <div class="card" style="border-top:5px solid var(--verde)">
+      <span class="tag v">Hecho</span><h3>Un enlace por canal</h3>
+      <p style="margin:0">Revisé el código de la página de inscripción: lee <code>origen</code>, <code>ubicacion</code>, los <code>utm_*</code> y <code>fbclid</code> del enlace y los manda junto con la inscripción. Hay <b>14 enlaces</b>, uno por canal, en la hoja (pestaña «Enlaces por canal») y <a href="#enlaces">acá</a>. El correo a liceos ya usa el suyo.</p>
+    </div>
+    <div class="card" style="border-top:5px solid var(--azul)">
+      <span class="tag a">Dato nuevo</span><h3>La 1.ª etapa cierra el 18 de diciembre</h3>
+      <p style="margin:0">Las inscripciones de la 1.ª etapa van hasta el <b>18 de diciembre de 2026</b>. Las olas 1 a 3 se ajustaron a esa fecha. Enero y febrero quedan para una 2.ª etapa, si se abre.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <h2>Agenda de Samuel<small>Hora de Colombia (en Uruguay son 2 horas más). Bloques de trabajo para que las olas avancen sin pisarse.</small></h2>
+  <p style="margin:0 0 14px"><a href="agenda-convocatoria-uy.ics" download style="display:inline-block;background:var(--naranja);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:8px">📅 Descargar la agenda para Google Calendar (.ics)</a></p>
+  <div class="semanas" id="agendaDias"></div>
+  <h3 style="margin-top:24px">Semanas siguientes, hasta el cierre</h3>
+  <div class="semanas">
+    <div class="semana"><div class="f">30 nov – 4 dic</div><h4>Liceos antes del cierre de clases</h4><ul><li>Lunes: revisar la base y el ranking de embajadores</li><li>Escalera de contacto a los liceos que no respondieron</li><li>Charlas en los liceos de los embajadores</li><li>Meta, tanda 1 (US$50, video A contra B)</li><li>10 invitaciones de LinkedIn por día</li></ul></div>
+    <div class="semana"><div class="f">7 – 11 dic</div><h4>Pauta y medios</h4><ul><li>Meta, tanda 2 (US$50 al video ganador)</li><li>Nota en radio y prensa local</li><li>Segundo correo a los postulantes que no abrieron</li><li>Charla abierta por Zoom</li></ul></div>
+    <div class="semana"><div class="f">14 – 18 dic</div><h4>Cierre de la 1.ª etapa</h4><ul><li>Recordatorio «quedan pocos días» a toda la base</li><li>Cada embajador llama a sus interesados</li><li>Retargeting en Meta, si queda saldo</li><li>Viernes 18: cierre y balance por canal</li></ul></div>
+  </div>
+</section>
+
+<!-- AVANCE -->
+<section id="semana1">
+  <h2>Lo que hacemos esta semana<small>Lo tachado ya está hecho. Se actualiza en cada publicación.</small></h2>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;font-size:14px"><b>Avance</b><span id="pct">0%</span></div>
+    <div class="progreso"><div id="barraPct"></div></div>
+    <div id="checklist"></div>
+  </div>
+</section>
+
+<!-- LA IDEA -->
+<section id="idea">
+  <h2>La idea central: de lo más cercano a lo más lejano<small>Primero quienes ya confían en nosotros, después quienes no nos conocen</small></h2>
+  <p class="lead">Un joven se inscribe más cuando se lo recomienda alguien de confianza (un amigo, un ex participante, su profe) que cuando ve un anuncio. Así que ordenamos todos los contactos según qué tan cercanos son: los cercanos rinden más y cuestan menos, y los lejanos los cubrimos con pauta y volumen.</p>
+  <div class="calidez" role="list">
+    <div role="listitem" style="background:#C12D4C"><b>🔥 Cercanos</b><span>Postulantes anteriores, embajadores y egresados JC</span></div>
+    <div role="listitem" style="background:#D1793F"><b>♨️ Con conexión</b><span>El liceo del embajador, docentes que conocemos, inspección</span></div>
+    <div role="listitem" style="background:#406C9E"><b>🌤️ Directo a jóvenes</b><span>Meta, Instagram, TikTok, radio y prensa local</span></div>
+    <div role="listitem" style="background:#6FA0BC"><b>❄️ Lejanos</b><span>Liceos sin contacto previo, empresas y aliados</span></div>
+  </div>
+  <div class="nota roja"><b>El calendario escolar manda.</b> En Uruguay las clases de liceo terminan a principios de diciembre y vuelven en marzo (hay que confirmarlo con el calendario ANEP). Los liceos hay que contactarlos <b>ya</b>, antes del cierre, o esperar a marzo. En el verano los jóvenes no están en el liceo pero sí en redes, así que en enero y febrero el peso lo llevan Meta y los embajadores.</div>
+</section>
+
+<!-- OLAS -->
+<section id="olas">
+  <h2>Orden de contacto: quién va primero, quién después<small>Toca cada ola para ver con quién, cómo, quién lo hace y cuánto esperamos</small></h2>
+  <div class="olas" id="listaOlas">
+
+    <div class="ola abierta">
+      <button aria-expanded="true"><span class="num" style="background:#5B6180">0</span><span><span class="tit">Preparar antes de contactar a nadie</span><br><span class="sub">Semana del 24 de noviembre · Samuel</span></span><span class="flecha">›</span></button>
+      <div class="cuerpo">
+        <p>Sin esto los contactos se pierden o no se pueden medir.</p>
+        <ul class="limpia">
+          <li><span class="tag v">Hecho</span> <b>Un enlace por canal</b>: son 14 (<a href="#enlaces">ver</a>). La página de inscripción lee el origen y los utm, y los manda con la inscripción.</li>
+          <li><span class="tag v">Hecho</span> <b>Ley 18.331 en el formulario de liceos</b>. <span class="tag n">En curso</span> En la página de inscripción falta que el equipo de la landing cargue el texto (<a href="#legal">propuesta</a>).</li>
+          <li><b>Kit del embajador</b>: el video, un texto corto para WhatsApp e Instagram, una imagen y su código de embajador.</li>
+          <li><b>Base de potenciales lista</b> (pestaña «Base potenciales UY»): cada contacto nuevo se anota con canal, sede y estado.</li>
+          <li><b>Mensajes aprobados por la jefa</b>: el correo a liceos y el mensaje a postulantes anteriores (ya los recibió en soportejunior@).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ola">
+      <button aria-expanded="false"><span class="num" style="background:#C12D4C">1</span><span><span class="tit">Los que ya nos conocen</span><br><span class="sub">Desde el 26 de noviembre, después de la charla con embajadores · cuesta casi nada y es lo que mejor responde</span></span><span class="flecha">›</span></button>
+      <div class="cuerpo">
+        <div class="scroll"><table class="tabla">
+          <tr><th>Con quién</th><th>Cómo</th><th>Responsable</th><th>Qué esperamos</th></tr>
+          <tr><td><b>347 postulantes 2025-2026</b></td><td>Correo desde convocatoria_uy@: «la convocatoria abrió, ¿te inscribís de nuevo o conocés a alguien?». A los que no abran, un segundo correo a los 5 días.</td><td>Samuel</td><td>Que vuelvan a postular los que todavía cumplen los requisitos, más ~1 referido cada 3 personas (≈100)</td></tr>
+          <tr><td><b>Embajadores</b> (los 6 que ya tienen código y los que sume Alfonzina)</td><td>Reunión corta para darles el kit. Cada uno comparte en sus grupos, su liceo y su barrio y anota los interesados.</td><td>Alfonzina</td><td>~20 contactos por embajador</td></tr>
+          <tr><td><b>Egresados JC Uruguay y familias</b></td><td>Pedirles un solo reenvío del video a quien tenga un hijo, sobrino o vecino de 5.º o 6.º</td><td>Alfonzina y embajadores</td><td>Referidos de confianza</td></tr>
+          <tr><td><b>Equipo y red de ROFÉ</b></td><td>Publicación en redes de ROFÉ y en el estado personal de cada persona del equipo</td><td>Comunicaciones</td><td>Alcance gratis</td></tr>
+        </table></div>
+        <div class="nota azul">El mensaje a postulantes sale por correo, uno por uno con la cuenta ya calentada. <b>Nada de envíos masivos por WhatsApp</b>: ya se bloqueó un número por eso. Por WhatsApp escribe solo cada embajador, a mano y a su gente.</div>
+      </div>
+    </div>
+
+    <div class="ola">
+      <button aria-expanded="false"><span class="num" style="background:#D1793F">2</span><span><span class="tit">Instituciones donde alguien ya tiene conexión</span><br><span class="sub">Del 26 de noviembre al 4 de diciembre, antes de que cierren los liceos</span></span><span class="flecha">›</span></button>
+      <div class="cuerpo">
+        <p>No le escribimos al liceo como desconocidos: entramos por una persona.</p>
+        <div class="scroll"><table class="tabla">
+          <tr><th>Con quién</th><th>Cómo</th><th>Responsable</th><th>Qué esperamos</th></tr>
+          <tr><td><b>Los liceos de los embajadores</b></td><td>El embajador le presenta al adscripto o al profe de informática y nosotros mandamos el correo con el formulario. Si se puede, el embajador da la charla de 10 minutos.</td><td>Embajadores + Samuel</td><td>Liceos que dicen que sí casi seguro</td></tr>
+          <tr><td><b>Los liceos de donde vinieron los 347</b></td><td>Si la base tiene el liceo de cada postulante, primero van los que más jóvenes nos mandaron (ver ideas)</td><td>Samuel</td><td>Lista corta de los ~15 liceos más prometedores</td></tr>
+          <tr><td><b>Inspección Departamental de Secundaria</b> de Paysandú y Colonia, y UTU</td><td>Un correo formal y una llamada para pedir el aval de difundir. Un sí arriba abre muchas puertas abajo.</td><td>Samuel con firma de la jefa</td><td>Permiso y difusión a todos los liceos públicos del departamento</td></tr>
+          <tr><td><b>Docentes, adscriptos y directores encontrados en LinkedIn</b></td><td>Desde la cuenta personal de Samuel: conexión con nota corta y una charla 1:1 de 15 minutos. Se pide una sola cosa: compartir el formulario con su liceo.</td><td>Samuel</td><td>~30 charlas → ~10 liceos con puerta abierta</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="ola">
+      <button aria-expanded="false"><span class="num" style="background:#406C9E">3</span><span><span class="tit">Directo a los jóvenes, a escala</span><br><span class="sub">Del 1 al 18 de diciembre, y en el verano si hay 2.ª etapa</span></span><span class="flecha">›</span></button>
+      <div class="cuerpo">
+        <div class="scroll"><table class="tabla">
+          <tr><th>Canal</th><th>Cómo</th><th>Responsable</th><th>Qué esperamos</th></tr>
+          <tr><td><b>Meta (Instagram y Facebook), US$100</b></td><td>El video de convocatoria, solo para 15 a 20 años en las ciudades de cada sede. Dos tandas de US$50: la primera (30 nov – 6 dic) prueba dos versiones y la segunda (7 – 18 dic) pone todo en la que mejor anduvo.</td><td>Samuel y Comunicaciones</td><td>~400–800 clics → ~150 interesados (estimación, se ajusta con la primera tanda)</td></tr>
+          <tr><td><b>Instagram y TikTok propios y de embajadores</b></td><td>Testimonios cortos de embajadores («yo estuve en JC y…»). Para los jóvenes es lo más creíble.</td><td>Embajadores</td><td>Alcance gratis y material para la pauta</td></tr>
+          <tr><td><b>Radios y medios locales</b> de Paysandú, Salto, Colonia y Carmelo</td><td>Nota de prensa con un embajador de la zona como protagonista. A los medios locales les gustan las historias de su ciudad.</td><td>Comunicaciones</td><td>Alcance a padres, que también deciden</td></tr>
+          <tr><td><b>Charla informativa abierta por Zoom</b></td><td>Una fecha fija («miércoles 19 h») a la que llevan todos los canales, para jóvenes y familias, con embajadores respondiendo preguntas</td><td>Samuel y Alfonzina</td><td>Convertir a los indecisos</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="ola">
+      <button aria-expanded="false"><span class="num" style="background:#6FA0BC">4</span><span><span class="tit">Lejanos: liceos sin contacto, empresas y aliados</span><br><span class="sub">Correo ya a los 92 liceos de la lista · aliados y empresas al final, como se indicó</span></span><span class="flecha">›</span></button>
+      <div class="cuerpo">
+        <ul class="limpia">
+          <li><b>Los 92 liceos de «Envío a liceos»</b>: correo con el formulario ahora, antes del cierre. Al que no responde se le aplica la escalera de contacto (ver abajo). Los que no alcancen a responder se retoman en marzo.</li>
+          <li><b>Aliados (44 en la pestaña)</b>: al final, como se indicó. Cuando entren, se les pide algo concreto y chico, no un convenio: «¿compartís esta publicación?» o «¿nos dejás 10 minutos en tu taller?».</li>
+          <li><b>Empresas</b>: no dependemos de ellas. Si alguna dice que sí, se le pide un correo interno a sus empleados que tengan hijos de 15 a 20 años (ver ideas).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ola">
+      <button aria-expanded="false"><span class="num" style="background:#6EA050">5</span><span><span class="tit">Cierre: recuperar a los que quedaron a mitad de camino</span><br><span class="sub">Del 14 al 18 de diciembre, la última semana de la 1.ª etapa</span></span><span class="flecha">›</span></button>
+      <div class="cuerpo">
+        <ul class="limpia">
+          <li>Recordatorio a todos los de la base que no terminaron la inscripción: «quedan X días».</li>
+          <li>Cada embajador llama o escribe a los interesados que él mismo trajo.</li>
+          <li>Lo que quede de pauta va a quienes vieron el video y no se inscribieron (retargeting).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ENLACES -->
+<section id="enlaces">
+  <h2>Enlaces por canal<small>Cada canal usa su propio enlace, así sabemos de dónde viene cada inscripción. También están en la hoja, pestaña «Enlaces por canal».</small></h2>
+  <div class="nota azul">Como respaldo, la inscripción también pregunta «¿cómo te enteraste?» y pide el código de embajador. Si alguien abre la página sin enlace, igual sabemos el canal por esa respuesta.</div>
+  <div class="card scroll"><table class="tabla" id="tablaEnlaces"><tr><th>Canal</th><th>Quién lo usa</th><th>Enlace</th></tr></table></div>
+</section>
+
+<!-- LEGAL -->
+<section id="legal">
+  <h2>Texto legal según la Ley 18.331<small>Propuesta para la página de inscripción de Uruguay. Antes de publicarla, que la revise el área legal.</small></h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Qué cambia</h3>
+      <div class="scroll"><table class="tabla">
+        <tr><th>Campo</th><th>Hoy</th><th>Propuesto</th></tr>
+        <tr><td>Ley</td><td>Ley Estatutaria 1581 de 2012 (Colombia)</td><td><b>Ley 18.331 de Protección de Datos Personales y Acción de Habeas Data</b> y su Decreto 414/009</td></tr>
+        <tr><td>Autoridad</td><td>Superintendencia de Industria y Comercio (SIC)</td><td><b>Unidad Reguladora y de Control de Datos Personales (URCDP)</b></td></tr>
+        <tr><td>Derechos</td><td>Conocer, actualizar, rectificar, suprimir</td><td>Acceso, rectificación, actualización, inclusión y supresión (arts. 14 y 15)</td></tr>
+      </table></div>
+      <div class="nota roja" style="margin-bottom:0"><b>Para legal:</b> (1) los datos se guardan en una fundación de Colombia, y la ley uruguaya pone condiciones a esa transferencia (art. 23); (2) Colón y Concepción del Uruguay están en Argentina, donde rige la Ley 25.326; (3) hay menores de edad, y su autorización la da el representante legal.</div>
+    </div>
+    <div class="card">
+      <h3>Último párrafo propuesto</h3>
+      <p style="background:#F2F6FB;border-left:4px solid var(--celeste);padding:12px 14px;border-radius:6px;margin:0">Tenés derecho a acceder a tus datos, a rectificarlos, actualizarlos, incluirlos o suprimirlos y a revocar esta autorización, según la Ley 18.331 de Protección de Datos Personales y Acción de Habeas Data y su Decreto 414/009. Para hacerlo, escribí a admin@tocaunavida.org con una copia de tu documento. Si no te responden en el plazo legal o no estás conforme con la respuesta, podés presentar una denuncia ante la Unidad Reguladora y de Control de Datos Personales (URCDP).</p>
+      <p style="font-size:14px;color:var(--suave)">En la configuración de la página son dos campos: <code>ley</code> y <code>autoridad</code>. El resto del texto puede quedar igual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFICILES -->
+<section id="dificiles">
+  <h2>Qué hacemos cuando un contacto no responde<small>Liceos y empresas: una escalera de contacto, no un único correo</small></h2>
+  <div class="grid2">
+    <div>
+      <h3>Escalera para liceos</h3>
+      <div class="escalera">
+        <div class="escalon"><span class="p">1</span><div><b>Correo con el formulario</b> (ya listo, con el nombre del liceo cargado)<br><small>Día 0 · se marca en «Envío a liceos»</small></div></div>
+        <div class="escalon"><span class="p">2</span><div><b>Llamada a adscripción o secretaría</b>: «les mandamos un correo, ¿a quién se lo hacemos llegar?»<br><small>Día 3 · los teléfonos ya están en la hoja</small></div></div>
+        <div class="escalon"><span class="p">3</span><div><b>Correo a la persona exacta</b> que nos dieron, con el mismo enlace<br><small>Día 4</small></div></div>
+        <div class="escalon"><span class="p">4</span><div><b>Embajador o docente conocido</b> de esa ciudad que haga el puente<br><small>Día 7</small></div></div>
+        <div class="escalon"><span class="p">5</span><div><b>Si no avanza, a la lista de marzo</b>. Se deja de insistir para no quemar el contacto.<br><small>Estado «Retomar en marzo»</small></div></div>
+      </div>
+    </div>
+    <div>
+      <h3>Para empresas: pedir menos para que digan que sí</h3>
+      <div class="card">
+        <p style="margin-top:0">Un convenio tarda meses y pasa por varias áreas. Lo que una empresa sí puede aprobar en un día:</p>
+        <ul class="limpia">
+          <li><b>Reenviar un correo a sus empleados</b>: «¿tenés un hijo en 5.º o 6.º? Esto es gratis». Le habla Recursos Humanos a gente que confía en su empresa.</li>
+          <li><b>Compartir una publicación</b> en su LinkedIn o Instagram.</li>
+          <li><b>Prestar un espacio</b> para una charla en su ciudad.</li>
+        </ul>
+        <p class="nota azul" style="margin-bottom:0">La puerta de entrada es una persona por LinkedIn (RR. HH. o responsabilidad social), no el formulario de contacto de la web.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECURSOS -->
+<section id="recursos">
+  <h2>Cómo usamos cada recurso<small>Ningún recurso queda sin tarea, y ninguno carga solo con todo</small></h2>
+  <div class="grid3">
+    <div class="card recurso"><h3>🙋 Embajadores</h3><dl>
+      <dt>Para qué</dt><dd>Ser el primer contacto con su gente y su liceo, y dar el testimonio después de que el interesado ya escuchó de nosotros.</dd>
+      <dt>Cómo</dt><dd>Kit + código propio + meta de 20 contactos cada uno. Cada semana un ranking de cuántos trajo cada uno, para motivar.</dd>
+      <dt>Quién</dt><dd>Alfonzina los consigue y los acompaña.</dd></dl></div>
+    <div class="card recurso"><h3>🎬 Video de convocatoria</h3><dl>
+      <dt>Para qué</dt><dd>Es la misma pieza para la pauta, el correo a liceos, los embajadores y la charla.</dd>
+      <dt>Cómo</dt><dd>Una versión de 30 segundos para redes y la completa para la charla y los liceos.</dd>
+      <dt>Quién</dt><dd>Comunicaciones.</dd></dl></div>
+    <div class="card recurso"><h3>📣 Meta US$100</h3><dl>
+      <dt>Para qué</dt><dd>Llegar a los jóvenes que ningún contacto alcanza, sobre todo en vacaciones.</dd>
+      <dt>Cómo</dt><dd>Dos tandas de US$50, solo 15 a 20 años en las ciudades de las sedes. Si la página guarda el origen, el enlace va con <code>?origen=meta</code> para medirlo.</dd>
+      <dt>Quién</dt><dd>Samuel y Comunicaciones.</dd></dl></div>
+    <div class="card recurso"><h3>💼 LinkedIn (cuenta personal de Samuel)</h3><dl>
+      <dt>Para qué</dt><dd>Encontrar a la persona exacta dentro de un liceo, una organización o una empresa.</dd>
+      <dt>Cómo</dt><dd>Búsquedas por cargo (adscripto, profesor de informática, director, RR. HH.) en las ciudades de las sedes. 5 a 10 invitaciones por día con nota y charla 1:1.</dd>
+      <dt>Quién</dt><dd>Samuel.</dd></dl></div>
+    <div class="card recurso"><h3>📝 Formulario de liceos</h3><dl>
+      <dt>Para qué</dt><dd>Saber cuántos estudiantes de 5.º y 6.º tiene cada liceo, a quién hablarle y si aceptan una charla.</dd>
+      <dt>Cómo</dt><dd>Un enlace personalizado por liceo. Las respuestas caen en la hoja.</dd>
+      <dt>Quién</dt><dd>Samuel envía y hace el seguimiento.</dd></dl></div>
+    <div class="card recurso"><h3>🗂️ Hoja FORMS LUGARES</h3><dl>
+      <dt>Para qué</dt><dd>Un solo lugar con el estado de todo: liceos, aliados, potenciales, fuentes y resumen.</dd>
+      <dt>Cómo</dt><dd>Cada contacto nuevo va a «Base potenciales UY» con su canal. Cada lunes se mira cuánto falta para llegar a 1.000.</dd>
+      <dt>Quién</dt><dd>Todo el equipo carga y Samuel consolida.</dd></dl></div>
+    <div class="card recurso"><h3>✉️ Correo convocatoria_uy@</h3><dl>
+      <dt>Para qué</dt><dd>Enviar a postulantes anteriores y a liceos sin usar cuentas personales.</dd>
+      <dt>Cómo</dt><dd>Primero se calienta la cuenta con pocos envíos y se sube de a poco. No se manda nada sin OK.</dd>
+      <dt>Quién</dt><dd>Samuel.</dd></dl></div>
+    <div class="card recurso"><h3>👥 Base de 347 postulantes</h3><dl>
+      <dt>Para qué</dt><dd>Es el contacto más cercano que tenemos y ya es el 35% de la meta.</dd>
+      <dt>Cómo</dt><dd>Reactivarlos y convertir a cada uno en un pequeño embajador que refiera a alguien. Sus datos quedan en su hoja de Drive, no se copian.</dd>
+      <dt>Quién</dt><dd>Samuel.</dd></dl></div>
+    <div class="card recurso"><h3>🤝 Aliados (44)</h3><dl>
+      <dt>Para qué</dt><dd>Sumar volumen al final y dejar armada la red para la convocatoria 2028.</dd>
+      <dt>Cómo</dt><dd>Un pedido concreto y chico, ordenado por la prioridad que ya tiene la pestaña.</dd>
+      <dt>Quién</dt><dd>Se reparte cuando se active esa fase.</dd></dl></div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section id="numeros">
+  <h2>¿Nos dan los números para llegar a 1.000?<small>Mové los supuestos y mirá cómo cambia el total. Son estimaciones para ajustar con lo que pase cada semana.</small></h2>
+  <div class="card calc">
+    <div id="controles"></div>
+    <div>
+      <div style="font-size:14px;color:var(--suave)">Jóvenes potenciales estimados</div>
+      <div class="total" id="total">0</div>
+      <div class="meta-pista"><div class="meta-lleno" id="metaLleno"></div><div class="meta-marca" id="metaMarca" title="Meta 1.000"></div></div>
+      <div id="veredicto" style="font-size:14px;font-weight:700"></div>
+      <div class="barras" id="barras" style="margin-top:18px"></div>
+    </div>
+  </div>
+  <p class="nota azul">La meta es tener <b>1.000 jóvenes potenciales</b> con datos de contacto, no 1.000 inscritos. Como referencia, Uruguay tuvo 351 postulaciones en 2025 y 219 en 2026. Pasar de potencial a inscripción depende del seguimiento de la ola 5.</p>
+</section>
+
+<!-- CALENDARIO -->
+<section id="calendario">
+  <h2>Calendario<small>La 1.ª etapa cierra el 18 de diciembre. La 2.ª etapa está por confirmar.</small></h2>
+  <div class="semanas">
+    <div class="semana"><div class="f">23 – 27 nov</div><h4>Preparar y arrancar</h4><ul><li>Enlaces por canal y Ley 18.331 ✔</li><li>Miércoles 25: charla con embajadores</li><li>Correo a los 347 postulantes, por tandas</li><li>Correo a los 92 liceos</li></ul></div>
+    <div class="semana"><div class="f">30 nov – 4 dic</div><h4>Liceos antes del cierre de clases</h4><ul><li>Llamadas de la escalera de contacto</li><li>Charlas en los liceos de los embajadores</li><li>Contacto con la Inspección</li><li>Meta, tanda 1</li></ul></div>
+    <div class="semana"><div class="f">7 – 11 dic</div><h4>Pauta y medios</h4><ul><li>Meta, tanda 2</li><li>Radio y prensa local</li><li>Charla abierta por Zoom</li></ul></div>
+    <div class="semana"><div class="f">14 – 18 dic</div><h4>Cierre de la 1.ª etapa</h4><ul><li>Recordatorios a toda la base</li><li>Embajadores llaman a sus interesados</li><li>Balance por canal</li></ul></div>
+    <div class="semana"><div class="f">Enero – febrero</div><h4>2.ª etapa (si se abre)</h4><ul><li>Redes y embajadores</li><li>Aliados y empresas</li></ul></div>
+    <div class="semana"><div class="f">Marzo</div><h4>Vuelta a clases</h4><ul><li>Lista de liceos de marzo</li><li>Charlas en el aula</li></ul></div>
+  </div>
+</section>
+
+<!-- IDEAS -->
+<section id="ideas">
+  <h2>Ideas para sumar<small>Cada una necesita algo de nuestro lado para arrancar</small></h2>
+  <div class="grid2">
+    <div class="card idea"><h3>1. Ordenar los liceos según cuántos postulantes nos mandaron</h3><p>Si la base de 347 tiene el liceo de cada uno, contamos cuántos vinieron de cada liceo. Los liceos con más postulantes ya nos conocen: van primero en la ola 2 y se les escribe nombrando a sus ex alumnos.</p><div class="q">Necesito: saber si la base tiene la columna liceo o institución. Yo armo el ranking sin copiar datos personales.</div></div>
+    <div class="card idea"><h3>2. Que cada postulante anterior traiga a alguien</h3><p>En el correo a los 347 les pedimos referir a un amigo con un código propio. El formulario ya tiene un campo de código de embajador. Si cada 3 postulantes traen 1 amigo, son ~100 contactos más sin gastar nada.</p><div class="q">Necesito: el OK para usar ese campo con códigos de referido además de los de embajador.</div></div>
+    <div class="card idea"><h3>3. Una charla abierta con fecha fija</h3><p>Todos los canales apuntan a una misma cita por Zoom. Es más fácil decir «vení el miércoles» que «inscribite». Los padres también pueden entrar y despejar dudas.</p><div class="q">Necesito: fecha, alguien de ROFÉ que la presente y 2 o 3 embajadores.</div></div>
+    <div class="card idea"><h3>4. El correo interno de una empresa en vez de un convenio</h3><p>A RR. HH. le pedimos solo reenviar a sus empleados con hijos de 15 a 20 años. Es fácil de aprobar y llega con la confianza de su empleador.</p><div class="q">Necesito: saber si ROFÉ ya tiene empresas amigas en Paysandú o Colonia para probarlo con una.</div></div>
+    <div class="card idea"><h3>5. Ranking semanal de embajadores</h3><p>Cada lunes, cuántos contactos trajo cada embajador según su código. Un reconocimiento chico (certificado o mención en redes) motiva sin costo.</p><div class="q">Necesito: que Alfonzina me pase los códigos de los embajadores nuevos.</div></div>
+    <div class="card idea"><h3>6. Los gremios y centros de estudiantes</h3><p>Muchos liceos tienen un Instagram de su centro de estudiantes. Que lo publiquen ellos llega mejor que si lo publica la dirección.</p><div class="q">Necesito: el OK para escribirles desde Instagram, a mano y uno por uno.</div></div>
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section id="preguntas">
+  <h2>Lo que necesitamos definir<small>Con estas respuestas el plan queda cerrado</small></h2>
+  <div class="card">
+    <div class="pregunta"><b class="i">1</b><div><b>¿Habrá una 2.ª etapa de inscripciones después del 18 de diciembre?</b> Con eso se decide si la pauta y los aliados siguen en el verano.</div></div>
+    <div class="pregunta"><b class="i">2</b><div><b>¿Cuántos embajadores confirma Alfonzina y cuándo?</b> La meta supone 10.</div></div>
+    <div class="pregunta"><b class="i">3</b><div><b>¿Quién del equipo de la landing carga el texto de la Ley 18.331</b> y quién de legal lo revisa?</div></div>
+    <div class="pregunta"><b class="i">4</b><div><b>¿Quién firma el pedido a la Inspección de Secundaria?</b> Lo ideal es la jefa o la dirección de ROFÉ.</div></div>
+    <div class="pregunta"><b class="i">5</b><div><b>¿Hay alguien que pueda ir en persona</b> a los liceos de Paysandú o Colonia, aunque sea una vez? Una visita convierte mucho más que un correo.</div></div>
+    <div class="pregunta"><b class="i">6</b><div><b>¿Cuándo se libera la pauta de Meta y quién la maneja</b>: Comunicaciones o nosotros?</div></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b style="color:#fff">Fundación ROFÉ · Jóvenes crea<span class="ti">TI</span>vos</b> — Plan de acción de la convocatoria Uruguay 2027 · preparado el 23 de noviembre de 2026.<br>
+    Las cifras de liceos, aliados y postulantes salen de la hoja FORMS LUGARES y de la base de Postulantes 2025-2026 de Uruguay. Las conversiones son estimaciones que se ajustan cada semana. Esta página no tiene datos personales.
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Olas desplegables
+  document.querySelectorAll('.ola>button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var o=b.parentElement, ab=o.classList.toggle('abierta');
+      b.setAttribute('aria-expanded',ab?'true':'false');
+    });
+  });
+
+  // Calculadora
+  var C=[
+    {id:'post',  et:'Postulantes anteriores que ya están en la base', min:0,max:347,paso:1,val:347,suf:'',
+     ayuda:'Cuentan desde el día 1 porque ya tenemos su contacto'},
+    {id:'ref',   et:'Referidos por cada postulante anterior', min:0,max:1,paso:0.05,val:0.3,suf:'',
+     ayuda:'0,3 = 1 amigo cada 3 postulantes'},
+    {id:'emb',   et:'Embajadores activos', min:0,max:30,paso:1,val:10,suf:''},
+    {id:'cpe',   et:'Contactos por embajador', min:0,max:60,paso:1,val:20,suf:''},
+    {id:'lic',   et:'Liceos que responden y difunden', min:0,max:92,paso:1,val:18,suf:'',
+     ayuda:'18 de 92 es ~20% de respuesta'},
+    {id:'jpl',   et:'Jóvenes interesados por liceo', min:0,max:60,paso:1,val:15,suf:''},
+    {id:'meta',  et:'Pauta Meta (US$)', min:0,max:500,paso:10,val:100,suf:''},
+    {id:'cpi',   et:'Costo por interesado en Meta (US$)', min:0.2,max:3,paso:0.05,val:0.7,suf:'',
+     ayuda:'Se ajusta con el resultado real de la tanda 1'},
+    {id:'lk',    et:'Charlas 1:1 por LinkedIn', min:0,max:100,paso:1,val:30,suf:''},
+    {id:'jlk',   et:'Jóvenes por cada charla de LinkedIn', min:0,max:10,paso:0.5,val:2,suf:''},
+    {id:'org',   et:'Prensa, orgánico y aliados (fijo)', min:0,max:300,paso:10,val:50,suf:''}
+  ];
+  var cont=document.getElementById('controles');
+  C.forEach(function(c){
+    var d=document.createElement('div');d.className='ctrl';
+    d.innerHTML='<label for="'+c.id+'">'+c.et+' <output id="o_'+c.id+'"></output></label>'+
+      '<input type="range" id="'+c.id+'" min="'+c.min+'" max="'+c.max+'" step="'+c.paso+'" value="'+c.val+'">'+
+      (c.ayuda?'<small>'+c.ayuda+'</small>':'');
+    cont.appendChild(d);
+  });
+  var fmt=function(n){return Math.round(n).toLocaleString('es-UY');};
+  function v(id){return parseFloat(document.getElementById(id).value);}
+  function calc(){
+    C.forEach(function(c){
+      var x=v(c.id);
+      document.getElementById('o_'+c.id).textContent=(c.paso<1?x.toLocaleString('es-UY',{maximumFractionDigits:2}):fmt(x));
+    });
+    var partes=[
+      {et:'Postulantes anteriores',n:v('post'),c:'#C12D4C'},
+      {et:'Referidos de postulantes',n:v('post')*v('ref'),c:'#D1793F'},
+      {et:'Embajadores',n:v('emb')*v('cpe'),c:'#F7972B'},
+      {et:'Liceos',n:v('lic')*v('jpl'),c:'#406C9E'},
+      {et:'Meta',n:v('cpi')>0?v('meta')/v('cpi'):0,c:'#6FA0BC'},
+      {et:'LinkedIn y docentes',n:v('lk')*v('jlk'),c:'#83B6DD'},
+      {et:'Prensa, orgánico y aliados',n:v('org'),c:'#6EA050'}
+    ];
+    var tot=partes.reduce(function(a,p){return a+p.n;},0);
+    var max=Math.max(tot,1000)*1.05;
+    document.getElementById('total').textContent=fmt(tot);
+    var ml=document.getElementById('metaLleno');
+    ml.style.width=Math.min(100,tot/max*100)+'%';
+    ml.style.background=tot>=1000?'#6EA050':(tot>=800?'#EEC935':'#C12D4C');
+    document.getElementById('metaMarca').style.left=(1000/max*100)+'%';
+    var ver=document.getElementById('veredicto');
+    if(tot>=1150){ver.textContent='✅ Llegamos con margen ('+fmt(tot-1000)+' de colchón)';ver.style.color='#3E6B2A';}
+    else if(tot>=1000){ver.textContent='✅ Llegamos, pero justos: conviene tener un plan B';ver.style.color='#3E6B2A';}
+    else{ver.textContent='⚠️ Faltan '+fmt(1000-tot)+' para la meta';ver.style.color='#9B1C38';}
+    var mx=Math.max.apply(null,partes.map(function(p){return p.n;}))||1;
+    document.getElementById('barras').innerHTML=partes.map(function(p){
+      return '<div class="barra"><div class="et"><span>'+p.et+'</span><b>'+fmt(p.n)+'</b></div>'+
+        '<div class="pista"><div class="lleno" style="width:'+(p.n/mx*100)+'%;background:'+p.c+'"></div></div></div>';
+    }).join('');
+  }
+  cont.addEventListener('input',calc);calc();
+
+  // Datos: agenda, enlaces y avance (se actualizan en cada publicación)
+  var AGENDA=[["Lunes 23", [["14:00", "16:00", "Plan de acción, enlaces por canal y Ley 18.331 en el formulario", "hecho"], ["16:00", "17:00", "Publicar el plan en GitHub Pages", "hecho"]]], ["Martes 24", [["08:00", "08:30", "Correr «Actualizar autorización (Ley 18.331)» en el Apps Script de la hoja", ""], ["08:30", "09:00", "Pasar al equipo de la landing el texto de la Ley 18.331 y pedir revisión legal", ""], ["09:00", "11:00", "Kit del embajador: video, texto para WhatsApp e Instagram, imagen y enlace con código", ""], ["11:00", "11:30", "Pedir el OK de la jefa a los mensajes (liceos y postulantes)", ""], ["14:00", "15:30", "Preparar la charla con embajadores: orden del día, diapositiva con QR, reparto de ciudades", ""], ["15:30", "16:30", "Conseguir correos de liceos y cargarlos en «Envío a liceos»", ""], ["16:30", "17:00", "LinkedIn: 10 invitaciones con nota", ""]]], ["Miércoles 25", [["08:00", "09:00", "Confirmar asistentes y mandar el enlace de la charla", ""], ["09:00", "10:00", "Ensayo de la charla y kit final", ""], ["", "", "⭐ Charla con embajadores (hora a confirmar): fechas, meta, kit, código, ciudad y liceo de cada uno, meta de 20 contactos", ""], ["15:00", "16:00", "Mandar a cada embajador su kit y su enlace con código; anotar su ciudad y liceo en la hoja", ""], ["16:00", "16:30", "LinkedIn: 10 invitaciones con nota", ""]]], ["Jueves 26", [["08:00", "09:00", "Postulantes anteriores: primera tanda chica desde convocatoria_uy@ (con OK)", ""], ["09:00", "10:30", "Crear borradores y enviar el correo a los liceos que ya tienen correo (con OK)", ""], ["10:30", "12:00", "Llamar a los liceos sin correo para conseguirlo", ""], ["14:00", "15:00", "Charlas 1:1 de LinkedIn", ""], ["15:00", "16:00", "Armar la campaña de Meta: 15 a 20 años, ciudades de las sedes, video A y B", ""]]], ["Viernes 27", [["08:00", "09:00", "Postulantes anteriores: segunda tanda", ""], ["09:00", "10:00", "Correo a las Inspecciones de Paysandú y Colonia, para la firma de la jefa", ""], ["10:00", "11:00", "Revisión semanal: base de potenciales, respuestas de liceos, contactos de embajadores", ""], ["11:00", "11:30", "Actualizar este plan y el avance", ""]]]];
+  var ENLACES=[["Embajadores (WhatsApp e Instagram propios)", "Cada embajador", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=embajador&utm_source=embajador&utm_medium=referido&utm_campaign=jc_uy_2027&utm_content=CODIGO"], ["Postulantes anteriores (correo)", "Samuel desde convocatoria_uy@", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=postulante_anterior&utm_source=postulantes_2025_2026&utm_medium=correo&utm_campaign=jc_uy_2027"], ["Referido de postulante anterior", "Los 347, al reenviar", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=referido&utm_source=postulantes_2025_2026&utm_medium=referido&utm_campaign=jc_uy_2027"], ["Liceos (correo con formulario)", "Samuel / Apps Script", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=liceo&utm_source=liceo&utm_medium=correo&utm_campaign=jc_uy_2027"], ["Charla en el liceo", "Embajador o equipo", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=liceo_charla&utm_source=liceo&utm_medium=charla&utm_campaign=jc_uy_2027"], ["Meta — video versión A", "Samuel / Comunicaciones", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=meta&utm_source=meta&utm_medium=paid_social&utm_campaign=jc_uy_2027&utm_content=video_a"], ["Meta — video versión B", "Samuel / Comunicaciones", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=meta&utm_source=meta&utm_medium=paid_social&utm_campaign=jc_uy_2027&utm_content=video_b"], ["Instagram orgánico ROFÉ / JC", "Comunicaciones", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=instagram&utm_source=instagram&utm_medium=organico&utm_campaign=jc_uy_2027"], ["Facebook orgánico ROFÉ", "Comunicaciones", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=facebook&utm_source=facebook&utm_medium=organico&utm_campaign=jc_uy_2027"], ["LinkedIn (cuenta de Samuel)", "Samuel", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=linkedin&utm_source=linkedin&utm_medium=mensaje&utm_campaign=jc_uy_2027"], ["Prensa y radio local", "Comunicaciones", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=prensa&utm_source=prensa&utm_medium=nota&utm_campaign=jc_uy_2027"], ["Charla abierta por Zoom", "Samuel y Alfonzina", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=charla_zoom&utm_source=zoom&utm_medium=charla&utm_campaign=jc_uy_2027"], ["Aliados y organizaciones", "Equipo (fase final)", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=aliado&utm_source=aliado&utm_medium=referido&utm_campaign=jc_uy_2027&utm_content=NOMBRE_ALIADO"], ["Empresas (correo interno a empleados)", "RR. HH. de la empresa", "https://convocatoria.tocaunavida.org/inscripcion/uruguay?origen=empresa&utm_source=empresa&utm_medium=correo&utm_campaign=jc_uy_2027&utm_content=NOMBRE_EMPRESA"]];
+  var T=[["Plan de acción publicado en GitHub Pages", "Lunes 23", "hecho"], ["Un enlace por canal (14) y verificar que la página guarda el origen", "Lunes 23 · pestaña «Enlaces por canal»", "hecho"], ["Ley 18.331 en el formulario de liceos", "Lunes 23 · falta correr «Actualizar autorización» en la hoja (martes)", "hecho"], ["Agenda de la semana armada", "Lunes 23 · también en .ics para Google Calendar", "hecho"], ["Ley 18.331 en la página de inscripción", "Texto listo; falta que lo cargue el equipo de la landing", "curso"], ["Jefa aprueba los mensajes a liceos y a postulantes", "Ya están en soportejunior@; esperando el OK", "curso"], ["Kit del embajador", "Martes 24", ""], ["Charla con embajadores y entrega del kit", "Miércoles 25", ""], ["Conseguir correos de liceos y enviarles el formulario", "Martes 24 a jueves 26", ""], ["Correo a los 347 postulantes por tandas", "Jueves 26 y viernes 27, con OK", ""], ["10 invitaciones por día en LinkedIn", "Desde el martes 24", ""], ["Correo a las Inspecciones de Paysandú y Colonia", "Viernes 27", ""], ["Campaña de Meta armada", "Jueves 26 · sale el lunes 30", ""]];
+
+  var ESC=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  document.getElementById('agendaDias').innerHTML=AGENDA.map(function(d){
+    return '<div class="semana"><div class="f">'+d[0]+'</div><ul style="list-style:none;padding:0">'+d[1].map(function(b){
+      var h=b[3]==='hecho', est=b[0]?'<b>'+b[0]+'–'+b[1]+'</b> ':'';
+      return '<li style="margin:6px 0;'+(h?'text-decoration:line-through;color:var(--suave)':'')+(b[2].charAt(0)==='⭐'?';background:#FFF1E0;border-radius:6px;padding:6px 8px;font-weight:700':'')+'">'+(h?'✅ ':'')+est+ESC(b[2])+'</li>';
+    }).join('')+'</ul></div>';
+  }).join('');
+  var te=document.getElementById('tablaEnlaces');
+  te.innerHTML+=ENLACES.map(function(e,i){
+    return '<tr><td><b>'+ESC(e[0])+'</b></td><td>'+ESC(e[1])+'</td><td><code style="font-size:12px;word-break:break-all">'+ESC(e[2])+'</code><br><button type="button" data-c="'+i+'" style="margin-top:6px;border:1px solid var(--linea);background:#fff;border-radius:6px;padding:4px 10px;cursor:pointer;font-family:inherit">Copiar</button></td></tr>';
+  }).join('');
+  te.addEventListener('click',function(e){
+    var i=e.target.getAttribute('data-c'); if(i===null)return;
+    var b=e.target;
+    function ok(){b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar';},1500);}
+    try{navigator.clipboard.writeText(ENLACES[i][2]).then(ok,function(){});}catch(err){}
+  });
+  var box=document.getElementById('checklist'), hechos=T.filter(function(t){return t[2]==='hecho';}).length;
+  var ET={hecho:['v','Hecho'],curso:['n','En curso'],'':['a','Pendiente']};
+  box.innerHTML=T.map(function(t){
+    var e=ET[t[2]];
+    return '<div class="check'+(t[2]==='hecho'?' hecho':'')+'"><span style="font-size:18px">'+(t[2]==='hecho'?'✅':(t[2]==='curso'?'🟡':'⬜'))+'</span><span>'+ESC(t[0])+' <span class="tag '+e[0]+'">'+e[1]+'</span><small>'+ESC(t[1])+'</small></span></div>';
+  }).join('');
+  var p=Math.round(hechos/T.length*100);
+  document.getElementById('pct').textContent=p+'% ('+hechos+' de '+T.length+')';
+  document.getElementById('barraPct').style.width=p+'%';
+})();
+</script>
+</body>
+</html>

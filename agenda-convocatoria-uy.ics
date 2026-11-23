@@ -15,23 +15,23 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:f555c870-e7d9-5a6d-9475-155f41aa2ef8@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T083000
 DTEND;TZID=America/Bogota:20261124T090000
 SUMMARY:JC UY · Pasar al equipo de la landing el texto de la Ley 18.331 y pedir revisión legal
 DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
-UID:68acfe86-0345-5ab9-b97a-63986f93bbd6@convocatoria-uy
-DTSTAMP:20261123T215951Z
+UID:d99d2512-d35b-512c-8028-9313a5fe60fa@convocatoria-uy
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T090000
 DTEND;TZID=America/Bogota:20261124T100000
-SUMMARY:JC UY · Pedir a Comunicaciones el enlace del video y la imagen para historias\; sumarlos al kit
+SUMMARY:JC UY · Pedir a Comunicaciones la imagen para historias (el video ya está en el kit)
 DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:3b60403f-f6f3-5680-941f-94208645fb0d@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T113000
 DTEND;TZID=America/Bogota:20261124T120000
 SUMMARY:JC UY · Confirmar con Alfonzina la ciudad de cada embajador y quién va a la charla
@@ -39,7 +39,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:2e40e521-351d-58d0-900c-5b55a097977d@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T110000
 DTEND;TZID=America/Bogota:20261124T113000
 SUMMARY:JC UY · Pedir el OK de la jefa a los mensajes (liceos y postulantes)
@@ -47,7 +47,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:347fe4bc-64ee-51e7-8c78-815ee9825d04@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T140000
 DTEND;TZID=America/Bogota:20261124T153000
 SUMMARY:JC UY · Repartir ciudades y liceos entre embajadores (borrador para la charla)
@@ -55,7 +55,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:b3d13b99-2f9d-510e-98b1-8c853f8205f2@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T153000
 DTEND;TZID=America/Bogota:20261124T163000
 SUMMARY:JC UY · Conseguir correos de liceos y cargarlos en «Envío a liceos»
@@ -63,7 +63,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:163ff6ca-5a56-546c-a6dd-833ce84047a2@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261124T163000
 DTEND;TZID=America/Bogota:20261124T170000
 SUMMARY:JC UY · LinkedIn: 10 invitaciones con nota
@@ -71,7 +71,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:b463c9ad-6747-5402-9a2b-3825ad84a9db@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261125T080000
 DTEND;TZID=America/Bogota:20261125T090000
 SUMMARY:JC UY · Confirmar asistentes y mandar el enlace de la charla
@@ -79,7 +79,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:6dc55144-fb70-5480-8875-0a1785b7fafa@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261125T090000
 DTEND;TZID=America/Bogota:20261125T100000
 SUMMARY:JC UY · Ensayo de la charla y kit final
@@ -87,7 +87,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:c73ff263-34da-52e0-8ac4-aa537558f275@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 SUMMARY:JC UY · Charla con embajadores (hora a confirmar): fechas\, meta\, kit\, código\, ciudad y liceo de cada uno\, meta de 20 contactos
@@ -95,7 +95,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:592de48d-7fb9-589d-8f43-e22973234f55@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261125T150000
 DTEND;TZID=America/Bogota:20261125T160000
 SUMMARY:JC UY · Mandar a cada embajador su kit y su enlace con código\; anotar su ciudad y liceo en la hoja
@@ -103,7 +103,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:287467b6-ed19-52e0-acc5-1ca0bd65a7ba@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261125T160000
 DTEND;TZID=America/Bogota:20261125T163000
 SUMMARY:JC UY · LinkedIn: 10 invitaciones con nota
@@ -111,7 +111,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:43dc624d-f7c5-56ac-b022-f529ba33241d@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261126T080000
 DTEND;TZID=America/Bogota:20261126T090000
 SUMMARY:JC UY · Postulantes anteriores: primera tanda chica desde convocatoria_uy@ (con OK)
@@ -119,7 +119,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:0cbf78d5-9579-5122-957b-528324575e25@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261126T090000
 DTEND;TZID=America/Bogota:20261126T103000
 SUMMARY:JC UY · Crear borradores y enviar el correo a los liceos que ya tienen correo (con OK)
@@ -127,7 +127,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:7aaf159f-fceb-5760-88a3-d2ef7c2ff9cc@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261126T103000
 DTEND;TZID=America/Bogota:20261126T120000
 SUMMARY:JC UY · Llamar a los liceos sin correo para conseguirlo
@@ -135,7 +135,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:049cefb4-612e-5926-abc5-6d5ff175b561@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261126T140000
 DTEND;TZID=America/Bogota:20261126T150000
 SUMMARY:JC UY · Charlas 1:1 de LinkedIn
@@ -143,7 +143,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:826fd78a-54f4-55e6-bad0-40a7444d61a7@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261126T150000
 DTEND;TZID=America/Bogota:20261126T160000
 SUMMARY:JC UY · Armar la campaña de Meta: 15 a 20 años\, ciudades de las sedes\, video A y B
@@ -151,7 +151,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:34a33fd1-521a-59cd-8d3f-a326f9508a16@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261127T080000
 DTEND;TZID=America/Bogota:20261127T090000
 SUMMARY:JC UY · Postulantes anteriores: segunda tanda
@@ -159,7 +159,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:202dd0d1-f41f-584f-b4e5-ededface83db@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261127T090000
 DTEND;TZID=America/Bogota:20261127T100000
 SUMMARY:JC UY · Correo a las Inspecciones de Paysandú y Colonia\, para la firma de la jefa
@@ -167,7 +167,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:a88a93e4-b67a-5420-a0ee-289ff6fb185c@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261127T100000
 DTEND;TZID=America/Bogota:20261127T110000
 SUMMARY:JC UY · Revisión semanal: base de potenciales\, respuestas de liceos\, contactos de embajadores
@@ -175,7 +175,7 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:b9c50b8a-fba8-5d99-bab8-bdf1c08dc06e@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;TZID=America/Bogota:20261127T110000
 DTEND;TZID=America/Bogota:20261127T113000
 SUMMARY:JC UY · Actualizar este plan y el avance
@@ -183,28 +183,28 @@ DESCRIPTION:Plan de acción convocatoria Uruguay 2027
 END:VEVENT
 BEGIN:VEVENT
 UID:c5132870-af22-530f-854a-35ec715713d1@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261205
 SUMMARY:JC UY · Liceos antes del cierre de clases + Meta tanda 1
 END:VEVENT
 BEGIN:VEVENT
 UID:3e726d39-5311-5677-a579-deb8b1f5c565@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;VALUE=DATE:20261207
 DTEND;VALUE=DATE:20261212
 SUMMARY:JC UY · Meta tanda 2 + prensa local + charla abierta Zoom
 END:VEVENT
 BEGIN:VEVENT
 UID:6188ca84-7b2d-5d10-be1d-bf8634febf11@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261219
 SUMMARY:JC UY · Cierre 1.ª etapa: recordatorios y balance
 END:VEVENT
 BEGIN:VEVENT
 UID:cierre-1-etapa-20261218@convocatoria-uy
-DTSTAMP:20261123T215951Z
+DTSTAMP:20261123T223136Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:JC UY · Cierre de la 1.ª etapa de inscripciones

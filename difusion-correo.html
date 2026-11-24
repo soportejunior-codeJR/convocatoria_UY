@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Difusión JC 2027 Uruguay</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: banda marino de apertura con las cifras, luego secciones en una columna de lectura con
+   la línea de tandas como pieza central; marca JC (naranja + marino) con azul ROFÉ de apoyo. */
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --fg:#141a33; --muted:#5a6079; --line:#dfe2ec;
+  --navy:#0C175D; --orange:#F7972B; --orange-ink:#b4610a; --rofe:#406C9E;
+  --band-fg:#ffffff; --band-muted:#c3c8e6; --soft:#fff3e4; --soft-blue:#e8eef6;
+  --font:"Gilroy","Urbanist","Century Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0f24; --surface:#141a36; --fg:#e9ebf5; --muted:#a3a8c3; --line:#262d52;
+  --navy:#070d3a; --orange:#F7972B; --orange-ink:#ffb25c; --rofe:#7fa6d4;
+  --band-fg:#ffffff; --band-muted:#aab0d6; --soft:#2a2112; --soft-blue:#16223a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0f24; --surface:#141a36; --fg:#e9ebf5; --muted:#a3a8c3; --line:#262d52;
+  --navy:#070d3a; --orange:#F7972B; --orange-ink:#ffb25c; --rofe:#7fa6d4;
+  --band-fg:#ffffff; --band-muted:#aab0d6; --soft:#2a2112; --soft-blue:#16223a; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+
+/* Apertura */
+.hero{background:var(--navy);color:var(--band-fg);margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 3rem);padding-bottom:3rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:56px solid var(--orange);opacity:.9}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:1.6rem}
+.hero .eyebrow{color:var(--orange)}
+.hero h1{font-size:clamp(2rem,5.2vw,3.4rem);font-weight:800;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .lead{color:var(--band-muted);max-width:60ch;font-size:1.08rem}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:.25rem .8rem;font-size:.85rem;color:var(--band-fg)}
+.pill.warn{background:var(--orange);border-color:var(--orange);color:#1b1200;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.18);border-radius:14px;overflow:hidden;margin-top:.6rem}
+.stat{background:var(--navy);padding:1.1rem 1.2rem;min-width:0}
+.stat b{display:block;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--band-muted);font-size:.9rem;line-height:1.35;display:block;margin-top:.3rem}
+.stat.hl b{color:var(--orange)}
+
+/* Navegación */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+nav.toc .wrap{display:flex;gap:1.2rem;overflow-x:auto;white-space:nowrap;padding-block:.7rem;scrollbar-width:none}
+nav.toc a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--orange-ink)}
+a:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+
+/* Secciones */
+main section{padding-block:3.2rem;border-bottom:1px solid var(--line);scroll-margin-top:3.5rem}
+.sec-head{display:grid;gap:.4rem;margin-bottom:1.6rem}
+.sec-head .eyebrow{color:var(--orange-ink)}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800}
+.sec-head p{color:var(--muted);max-width:65ch}
+.prose{max-width:68ch;display:grid;gap:.9rem}
+
+/* Pedido de autorización */
+.asks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem;counter-reset:ask}
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;display:grid;gap:.35rem;align-content:start;counter-increment:ask;min-width:0}
+.ask::before{content:counter(ask);width:2rem;height:2rem;border-radius:50%;background:var(--orange);color:#1b1200;display:grid;place-items:center;font-weight:800}
+.ask h3{font-size:1.1rem;font-weight:700}
+.ask p{color:var(--muted);font-size:.96rem}
+
+/* Barras */
+.bars{display:grid;gap:1.6rem}
+.barcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.3rem;min-width:0}
+.barcard h3{font-size:1.05rem;margin-bottom:.9rem}
+.stack{display:flex;height:42px;border-radius:8px;overflow:hidden;gap:2px}
+.stack div{display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;font-variant-numeric:tabular-nums;min-width:28px}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:.6rem;margin-top:1rem;font-size:.93rem;color:var(--muted)}
+.legend b{color:var(--fg)}
+.sw{display:inline-block;width:.75rem;height:.75rem;border-radius:3px;margin-right:.4rem;vertical-align:baseline}
+.hbars{display:grid;gap:.55rem}
+.hrow{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr) 3rem;gap:.8rem;align-items:center;font-size:.93rem}
+.hrow .track{height:14px;background:var(--soft-blue);border-radius:7px;overflow:hidden}
+.hrow .fill{height:100%;background:var(--rofe);border-radius:7px}
+.hrow .n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.note{font-size:.88rem;color:var(--muted);margin-top:.9rem}
+
+/* Línea de tandas */
+.timeline{display:grid;gap:0;position:relative}
+.step{display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;gap:1rem;align-items:start;padding-block:1rem;position:relative}
+.step:not(:last-child)::after{content:"";position:absolute;left:1.55rem;top:3.2rem;bottom:-.2rem;width:2px;background:var(--line)}
+.dot{width:3.2rem;height:3.2rem;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--surface);border:2px solid var(--rofe);color:var(--rofe);position:relative;z-index:1}
+.step.send .dot{background:var(--orange);border-color:var(--orange);color:#1b1200}
+.step h3{font-size:1.06rem;font-weight:700}
+.step p{color:var(--muted);font-size:.94rem}
+.when{text-align:right;min-width:0}
+.when b{display:block;font-variant-numeric:tabular-nums;font-size:1.05rem}
+.when span{color:var(--muted);font-size:.85rem}
+.why{background:var(--soft);border-radius:14px;padding:1.2rem 1.3rem;margin-top:1.4rem;max-width:72ch}
+
+/* Listas con marca */
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:.75rem;max-width:72ch}
+.checks li{display:grid;grid-template-columns:1.6rem minmax(0,1fr);gap:.6rem}
+.checks li::before{content:"";width:.7rem;height:.7rem;margin-top:.5rem;border-radius:2px;background:var(--orange);transform:rotate(45deg)}
+.checks.blue li::before{background:var(--rofe)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.3rem;display:grid;gap:.8rem;align-content:start;min-width:0}
+.panel h3{font-size:1.1rem}
+.callout{border-left:4px solid var(--orange);background:var(--surface);padding:1rem 1.2rem;border-radius:0 12px 12px 0;max-width:72ch}
+
+/* Riesgos */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{text-align:left;padding:.9rem 1.1rem;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+th{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700;width:34%}
+
+/* Pendientes */
+.todo{list-style:none;padding:0;margin:0;display:grid;gap:.6rem;max-width:72ch}
+.todo li{display:grid;grid-template-columns:1.4rem minmax(0,1fr);gap:.7rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.75rem 1rem}
+.todo li::before{content:"";width:1.1rem;height:1.1rem;border:2px solid var(--muted);border-radius:4px;margin-top:.2rem}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.86em;background:var(--soft-blue);padding:.08rem .35rem;border-radius:4px;overflow-wrap:anywhere}
+
+footer{padding-block:2.4rem 3rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:grid;gap:.4rem}
+
+@media (max-width:760px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hrow{grid-template-columns:minmax(0,1fr) 3rem}
+  .hrow .track{grid-column:1 / -1;order:3}
+  .step{grid-template-columns:2.6rem minmax(0,1fr)}
+  .dot{width:2.6rem;height:2.6rem}
+  .step:not(:last-child)::after{left:1.25rem;top:2.6rem}
+  .when{grid-column:2;text-align:left}
+  .when b{display:inline;margin-right:.4rem}
+  .hero::after{width:260px;height:260px;border-width:36px;right:-110px;top:-90px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap">
+    <div class="meta">
+      <span class="pill warn">Borrador para aprobación</span>
+      <span class="pill">Versión 1 · 24/11/2026</span>
+      <span class="pill">Nada enviado todavía</span>
+    </div>
+    <p class="eyebrow">Fundación ROFÉ · Jóvenes creaTIvos</p>
+    <h1>Plan de difusión de la convocatoria <em>2027</em> en Uruguay</h1>
+    <p class="lead">Que liceos, UTU, centros de formación y organismos de juventud conozcan la convocatoria y la compartan con sus estudiantes. Se usa el correo porque es el canal más barato, con prioridad en Paysandú (sede) y en los centros que ya mandaron postulantes en 2025–2026.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b>1.044</b><span>entidades en el directorio, de fuentes oficiales</span></div>
+      <div class="stat hl" role="listitem"><b>524</b><span>con correo institucional verificado</span></div>
+      <div class="stat" role="listitem"><b>28</b><span>casillas de inspección DGES (hasta 467 liceos, si colaboran)</span></div>
+      <div class="stat" role="listitem"><b>124</b><span>sin correo: quedan fuera del envío</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Secciones">
+  <div class="wrap">
+    <a href="#autorizar">Qué se autoriza</a>
+    <a href="#base">La base</a>
+    <a href="#calendario">Calendario</a>
+    <a href="#controles">Controles</a>
+    <a href="#textos">Textos</a>
+    <a href="#pedido">Pedido formal</a>
+    <a href="#linkedin">LinkedIn</a>
+    <a href="#medicion">Medición</a>
+    <a href="#riesgos">Riesgos</a>
+    <a href="#pendientes">Pendientes</a>
+  </div>
+</nav>
+
+<main>
+  <section id="autorizar">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Lo que se pide hoy</p>
+        <h2>Seis decisiones para poder ejecutar</h2>
+        <p>Con estas seis aprobaciones el plan queda listo para arrancar. Sin la quinta no se puede cerrar ningún texto.</p>
+      </div>
+      <div class="asks">
+        <article class="ask"><h3>El envío</h3><p>Desde la cuenta de la convocatoria a las 524 entidades con correo institucional y a las 28 inspecciones DGES, con los textos que se aprueban por correo.</p></article>
+        <article class="ask"><h3>El calendario</h3><p>Envío en tandas, con el calentamiento de la cuenta nueva incluido.</p></article>
+        <article class="ask"><h3>El pedido formal</h3><p>A DGES, INJU e INAU, para obtener el directorio de correos de liceos y centros juveniles.</p></article>
+        <article class="ask"><h3>Quién responde</h3><p>Quién atiende las respuestas que lleguen a la cuenta de la convocatoria, y en qué plazo.</p></article>
+        <article class="ask"><h3>Las fechas 2027</h3><p>Apertura, cierre y enlace del formulario de la convocatoria.</p></article>
+        <article class="ask"><h3>LinkedIn a nombre de la Fundación</h3><p>La publicación en la página de la Fundación, quién hace el contacto 1 a 1 y los dos mensajes.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="base">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Corte 2026-11-23</p>
+        <h2>A quién le llega</h2>
+        <p>El directorio se armó con fuentes oficiales (ANEP, DGES, gub.uy, INAU, AGESIC) y los sitios de cada entidad. Se usan solo correos de cargo o de institución.</p>
+      </div>
+      <div class="bars">
+        <div class="barcard">
+          <h3>Las 524 con correo, por prioridad</h3>
+          <div class="stack" aria-label="Prioridad A 18, B 241, C 265">
+            <div style="flex:18;background:var(--orange);color:#1b1200" title="A: 18">18</div>
+            <div style="flex:241;background:var(--rofe);color:#fff">241</div>
+            <div style="flex:265;background:var(--line);color:var(--fg)">265</div>
+          </div>
+          <div class="legend">
+            <div><span class="sw" style="background:var(--orange)"></span><b>A · 18:</b> centros con 5 o más postulantes, o centros educativos de Paysandú.</div>
+            <div><span class="sw" style="background:var(--rofe)"></span><b>B · 241:</b> centros con algún postulante, de Montevideo, u organismos de juventud.</div>
+            <div><span class="sw" style="background:var(--line)"></span><b>C · 265:</b> el resto.</div>
+          </div>
+        </div>
+        <div class="barcard">
+          <h3>Las 524 con correo, por tipo de entidad</h3>
+          <div class="hbars">
+            <div class="hrow"><span>UTU</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="n">287</span></div>
+            <div class="hrow"><span>Gobierno y juventud (INJU, MIDES, INAU, MEC, intendencias)</span><div class="track"><div class="fill" style="width:32.75%"></div></div><span class="n">94</span></div>
+            <div class="hrow"><span>Inspecciones y oficinas DGES</span><div class="track"><div class="fill" style="width:12.89%"></div></div><span class="n">37</span></div>
+            <div class="hrow"><span>Liceos privados</span><div class="track"><div class="fill" style="width:12.54%"></div></div><span class="n">36</span></div>
+            <div class="hrow"><span>Formación docente y terciario técnico</span><div class="track"><div class="fill" style="width:11.15%"></div></div><span class="n">32</span></div>
+            <div class="hrow"><span>Cecap</span><div class="track"><div class="fill" style="width:7.67%"></div></div><span class="n">22</span></div>
+            <div class="hrow"><span>Organizaciones juveniles</span><div class="track"><div class="fill" style="width:2.79%"></div></div><span class="n">8</span></div>
+            <div class="hrow"><span>Universidades</span><div class="track"><div class="fill" style="width:1.74%"></div></div><span class="n">5</span></div>
+            <div class="hrow"><span>Liceos públicos</span><div class="track"><div class="fill" style="width:1.05%"></div></div><span class="n">3</span></div>
+          </div>
+          <p class="note">ANEP publica el correo de solo 3 de los 317 liceos públicos. Por eso se llega a ellos a través de sus inspecciones y del pedido formal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendario">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Calendario propuesto</p>
+        <h2>En tandas, de lo más seguro a lo más amplio</h2>
+        <p>Antes de fijar fechas se revisa el calendario de ANEP: las clases de media terminan en diciembre y vuelven en marzo. Se aprovecha diciembre o se deja todo listo para la primera semana de marzo.</p>
+      </div>
+      <div class="timeline">
+        <div class="step"><div class="dot">0</div><div><h3>Aprobación y preparación</h3><p>Fechas de la convocatoria y preparación de la cuenta.</p></div><div class="when"><b>Día 0</b><span>—</span></div></div>
+        <div class="step"><div class="dot">1</div><div><h3>Vista previa y piloto</h3><p>A cuentas internas del equipo y de quien aprueba.</p></div><div class="when"><b>Día 1</b><span>2–3 correos</span></div></div>
+        <div class="step send"><div class="dot">2</div><div><h3>Tanda A</h3><p>Paysandú y centros con más postulantes.</p></div><div class="when"><b>Día 2</b><span>18</span></div></div>
+        <div class="step send"><div class="dot">3</div><div><h3>Inspecciones DGES</h3><p>Con el texto de reenvío para sus liceos.</p></div><div class="when"><b>Día 2</b><span>28</span></div></div>
+        <div class="step send"><div class="dot">4</div><div><h3>Tanda B1</h3><p>Organismos de juventud e intendencias.</p></div><div class="when"><b>Día 3</b><span>~95</span></div></div>
+        <div class="step send"><div class="dot">5</div><div><h3>Tanda B2</h3><p>UTU, privados y el resto de B.</p></div><div class="when"><b>Días 4–5</b><span>~145</span></div></div>
+        <div class="step send"><div class="dot">6</div><div><h3>Tandas C</h3><p>Solo si las anteriores no superan 5 % de rebotes ni tienen quejas. De 100 a 150 por día.</p></div><div class="when"><b>Días 6–8</b><span>~265</span></div></div>
+        <div class="step send"><div class="dot">7</div><div><h3>Recordatorio</h3><p>A quienes no respondieron, solo entidades A y B.</p></div><div class="when"><b>7–10 días antes del cierre</b><span>≤260</span></div></div>
+      </div>
+      <div class="why prose">
+        <p><b>Por qué en tandas:</b> la cuenta es nueva. Mandar cientos de correos fríos el primer día dispara los filtros de spam de Gmail y de los servidores de ANEP. El límite de Gmail ronda los 2.000 destinatarios por día, pero el freno real es la reputación de la cuenta. Antes de cada tanda se revisan los rebotes y las quejas de la anterior.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="controles">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Controles en cada envío</p>
+        <h2>Nada sale sin revisión</h2>
+      </div>
+      <div class="grid2">
+        <div class="panel"><h3>Antes de cada tanda</h3><p>Se muestra el remitente, el número de destinatarios y el texto, y se espera el OK. Nunca hay envío masivo sin confirmación.</p></div>
+        <div class="panel"><h3>Baja (Ley 18.331)</h3><p>Cada correo identifica a la Fundación ROFÉ, dice de dónde salió la dirección y trae instrucción de baja. Las bajas se respetan en todas las campañas siguientes.</p></div>
+        <div class="panel"><h3>Rebotes</h3><p>Se leen del buzón después de cada tanda. Los rebotes duros salen de la lista. Si superan el 5 %, la campaña se pausa y se revisa la fuente.</p></div>
+        <div class="panel"><h3>Solo casillas institucionales</h3><p>No se usan casillas con nombre de persona, ni correos inferidos o con alerta. La base se usa solo para esta difusión y no se comparte.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="textos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Textos</p>
+        <h2>Se aprueban en un solo correo</h2>
+        <p>Los textos no van en este plan. Se envían para aprobación en un solo correo a quien aprueba el plan, y ningún paquete sale sin esa aprobación.</p>
+      </div>
+      <ul class="checks">
+        <li><span><b>Correo a centros educativos y organismos:</b> invita a compartir la convocatoria con sus estudiantes. Trae la baja y dice de dónde salió la dirección.</span></li>
+        <li><span><b>Correo a inspecciones DGES:</b> pide reenviarlo a los liceos que supervisa, trae un texto listo para reenviar y ofrece una alternativa si prefieren no hacerlo.</span></li>
+        <li><span><b>Recordatorio</b> a las entidades A y B antes del cierre.</span></li>
+        <li><span><b>Dos mensajes de LinkedIn:</b> la invitación a conectar (máximo 300 caracteres) y el mensaje cuando la persona acepta.</span></li>
+      </ul>
+      <div class="callout" style="margin-top:1.4rem">
+        <p><b>Alcance de las inspecciones:</b> los 467 liceos son un alcance <b>posible, no seguro</b>. Depende de que cada inspección colabore, y puede que pidan un aval de DGES central. Por eso el pedido formal va en paralelo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pedido">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Para cerrar huecos</p>
+        <h2>Pedido formal a los organismos</h2>
+        <p>Los plazos de respuesta son de semanas, así que esto apoya la segunda ola (recordatorio o marzo), no la primera.</p>
+      </div>
+      <div class="grid2">
+        <div class="panel"><h3>DGES / Inspección Técnica</h3><p>El directorio de casillas institucionales de liceos, por acceso a la información pública (Ley 18.381) o por nota directa.</p></div>
+        <div class="panel"><h3>INJU</h3><p>El listado vigente de Puntos INJU y centros juveniles en convenio.</p></div>
+        <div class="panel"><h3>INAU</h3><p>El listado de centros juveniles por departamento.</p></div>
+        <div class="panel"><h3>AUDEC / ANIEP</h3><p>Que difundan la convocatoria entre los colegios privados asociados.</p></div>
+      </div>
+      <p class="note">Las 124 entidades sin correo quedan fuera. Si hay personal disponible, se puede llamar a las de Paysandú. No se hace contacto automatizado por WhatsApp.</p>
+    </div>
+  </section>
+
+  <section id="linkedin">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Complemento al correo</p>
+        <h2>Contacto 1 a 1 por LinkedIn</h2>
+        <p>Dirigido a 20–40 referentes clave, con prioridad en Paysandú. La lista se arma con información profesional pública y se guarda fuera del repositorio.</p>
+      </div>
+      <div class="grid2">
+        <div class="panel">
+          <h3>A quién</h3>
+          <ul class="checks blue">
+            <li><span>Dirección de UTU, liceos e inspección DGES</span></li>
+            <li><span>INJU y MIDES</span></li>
+            <li><span>Área de juventud de la Intendencia</span></li>
+            <li><span>Cecap y Centro MEC</span></li>
+            <li><span>CENUR Litoral Norte y UTEC</span></li>
+            <li><span>Programas de empleo y tecnología joven</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Desde qué cuenta</h3>
+          <p>Por seguridad de la Fundación, todo se hace a nombre de la Fundación ROFÉ.</p>
+          <ul class="checks">
+            <li><span><b>La página de la Fundación</b> publica la convocatoria y la deja fija.</span></li>
+            <li><span><b>Una persona autorizada del equipo</b> hace el 1 a 1 desde su perfil, con la Fundación como lugar de trabajo, y enlaza la publicación de la página. LinkedIn no deja que una página envíe invitaciones.</span></li>
+            <li><span><b>No se crea un perfil personal</b> a nombre de la Fundación: LinkedIn lo prohíbe y cierra esas cuentas.</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Reglas</h3>
+          <ul class="checks blue">
+            <li><span>Manual, uno por uno, sin herramientas de automatización.</span></li>
+            <li><span>Máximo 15–20 contactos por día. Ante cualquier aviso de LinkedIn, se para.</span></li>
+            <li><span>Primero el correo institucional, después LinkedIn.</span></li>
+            <li><span>Si la persona no responde o no le interesa, no se insiste.</span></li>
+            <li><span>Los datos se usan solo para esta difusión (Ley 18.331).</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="medicion">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Cómo se mide</p>
+        <h2>Entrega, efecto y charlas</h2>
+      </div>
+      <div class="grid2">
+        <div class="panel"><h3>Entrega</h3><p>Enviados, rebotes, bajas y respuestas por tanda, con un resumen al cerrar cada una.</p></div>
+        <div class="panel"><h3>Efecto</h3><p>Postulaciones de Uruguay 2027 frente a 2025–2026, por centro. Se propone sumar al formulario la opción «Me enteré por mi liceo, UTU o centro».</p></div>
+        <div class="panel"><h3>Charlas</h3><p>Charlas informativas coordinadas a partir de las respuestas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="riesgos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Riesgos</p>
+        <h2>Qué puede salir mal y cómo se evita</h2>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Riesgo</th><th>Mitigación</th></tr></thead>
+          <tbody>
+            <tr><td>La cuenta nueva cae en spam</td><td>Calentamiento en tandas, sin adjuntos pesados, remitente con nombre claro y baja visible.</td></tr>
+            <tr><td>Rebotes de fuentes viejas</td><td>Esas fuentes van en las tandas tardías, con corte por un 5 % de rebotes.</td></tr>
+            <tr><td>Quejas por correo no solicitado</td><td>Solo casillas institucionales públicas, baja inmediata y origen aclarado.</td></tr>
+            <tr><td>Envío fuera del año lectivo</td><td>Se confirma el calendario de ANEP antes de fijar las fechas.</td></tr>
+                      </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendientes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Antes de ejecutar</p>
+        <h2>Pendientes</h2>
+      </div>
+      <ul class="todo">
+        <li><span>Aprobación del plan</span></li>
+        <li><span>Fechas y enlace del formulario 2027, y pieza gráfica</span></li>
+        <li><span>Correo de aprobación con los textos finales de todos los paquetes de correo y de LinkedIn</span></li>
+                <li><span>Archivo de campaña y lista por tanda</span></li>
+        <li><span>Registro en Linear</span></li>
+        <li><span>Notas del pedido formal (DGES, INJU, INAU)</span></li>
+        <li><span>Revisar la lista de referentes de LinkedIn y buscar sus perfiles dentro de LinkedIn</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Fundación ROFÉ · Jóvenes creaTIvos</p>
+    <p>La versión para firma es el documento Word con el formato RH-003-F.</p>
+  </div>
+</footer>
+
+</body>
+</html>
